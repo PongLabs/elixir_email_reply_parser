@@ -1,5 +1,6 @@
 # The directory Mix will write compiled artifacts to.
 /_build
+/.iex.exs
 
 # If you run "mix test --cover", coverage assets end up here.
 /cover
@@ -21,3 +22,9 @@ erl_crash.dump
 
 # IDE settings
 /.idea
+
+/log
+console.log*
+error.log*
+.tool-versions
+/.elixir_ls
