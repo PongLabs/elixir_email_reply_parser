@@ -2,20 +2,21 @@ defmodule ElixirEmailReplyParser.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :elixir_email_reply_parser,
-     version: "0.1.2",
-     description: description(),
-     elixir: "~> 1.3",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     package: package(),
-     deps: deps(),
+    [
+      app: :elixir_email_reply_parser,
+      version: "0.5.10",
+      description: description(),
+      elixir: "~> 1.10",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      package: package(),
+      deps: deps(),
 
-     # Docs
-     name: "Elixir Email Reply Parser",
-     source_url: "https://github.com/hellogustav/elixir_email_reply_parser",
-     docs: [main: "readme",
-            extras: ["README.md", "LICENSE.md"]]]
+      # Docs
+      name: "Elixir Email Reply Parser",
+      source_url: "https://github.com/hellogustav/elixir_email_reply_parser",
+      docs: [main: "readme", extras: ["README.md", "LICENSE.md"]]
+    ]
   end
 
   # Configuration for the OTP application
@@ -36,17 +37,19 @@ defmodule ElixirEmailReplyParser.Mixfile do
   end
 
   defp package do
-    [name: :elixir_email_reply_parser,
-    maintainers: ["elixir.email.reply.parser@gmail.com"],
-    licenses: ["MIT"],
-    links: %{"GitHub" => "https://github.com/hellogustav/elixir_email_reply_parser"}]
+    [
+      name: :elixir_email_reply_parser,
+      maintainers: ["elixir.email.reply.parser@gmail.com"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/hellogustav/elixir_email_reply_parser"}
+    ]
   end
 
   defp deps do
     [
-      {:dialyxir, "~> 0.5", only: :dev, runtime: false},
-      {:earmark, "~> 1.2.0", only: :dev},
-      {:ex_doc, "~> 0.15", only: :dev}
+      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
+      {:earmark, "~> 1.4.0", only: :dev},
+      {:ex_doc, "~> 0.22", only: :dev}
     ]
   end
 end
